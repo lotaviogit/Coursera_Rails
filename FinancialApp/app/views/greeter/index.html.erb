@@ -1,0 +1,12 @@
+<h1>Greeter#index</h1>
+<p>Find me in app/views/greeter/index.html.erb</p>
+
+
+<% # Business logic should be on the controller %>
+<% #random_names= ["Donald", "Mickey", "Pluto"] %>
+<p>Greetings: <%= @random_names.sample %></p>
+<p>Time is <%= formated_time(@time) %></p>
+<p>Page viewed <%= @times_displayed %> time(s)</p>
+
+<p>Using link_to _path (TODO: Use _url as well)</p>
+<%= link_to "Goodbye", greeter_goodbye_path %>

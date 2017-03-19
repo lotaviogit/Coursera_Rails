@@ -1,0 +1,8 @@
+<% # Business logic should be on the controller %>
+<% #random_names= ["Donald", "Mickey", "Pluto"] %>
+<p>Goodbye: <%= @random_names.sample %> :(</p>
+<p>Time is <%= formated_time(@time) %></p>
+<p>Page viewed <%= @times_displayed %> time(s)</p>
+
+<% # Prefix can be got from 'rake routes' %>
+<%= link_to "Greetings", greeter_index_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @day.cost %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @day.description %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @day.day %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @day.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @day.year %>
+</p>
+
+<% @day.comments.each do |c| %>
+  <p><%=c.text%></p>
+<% end %>
+
+<%= link_to 'Edit', edit_day_path(@day) %> |
+<%= link_to 'Back', days_path %>

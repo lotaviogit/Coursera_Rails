@@ -1,0 +1,46 @@
+<h1>Recipes#index</h1>
+<p>Find me in app/views/recipes/index.html.erb</p>
+
+
+<p>Search param: <%= @search_term %></p>
+
+<input type="text" name="word" id="search_param"/>
+
+<%= link_to "New search", "/recipes/index?search=#{@search_param}", remote: true, data: {disable_with: "<p> loading </p>"} %>
+
+<% # For for the recipies search %>
+<%= form_tag recipes_ingredients_path, :method => 'get', remote: true,
+	data: {disable_with: "<p> Loading </p>"} do %>
+  <p>
+    <%= text_field_tag :url, params[:url] %>
+    <%= submit_tag "Get Ingredients", data: {disable_with: "Loading"}, :name => nil %>
+  </p>
+<% end %>
+
+<div class="ingr_show"></div>
+
+
+<%= form_tag recipes_index_path, :method => 'get', remote: true,
+	data: {disable_with: "<p> Loading </p>"} do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", data: {disable_with: "Loading"}, :name => nil %>
+  </p>
+<% end %>
+
+<div class='recipe_show'>
+	<table class="recipe_table">
+		<% @recipes[0..4].each do |r| %>
+			<tr>
+				<td>
+				<%= link_to r['f2f_url'] do %>
+					<%= image_tag "#{r['image_url']}", :width => "100", :height => "100", class: "image_tag" %>
+				<% end %>
+				</td>
+				<td><%= r['title'] %></td>
+				<td><%= r['social_rank'].round(3) %></td>
+				<td><%= link_to "Ingredients", recipes_ingredients_path(:url => r['f2f_url']), remote: true %> </td>
+			</tr>
+		<% end %>
+	</table>
+</div>

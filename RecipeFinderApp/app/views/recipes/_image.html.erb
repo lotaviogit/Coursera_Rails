@@ -1,0 +1,128 @@
+<%= javascript_tag do %>
+
+	function wait(ms){
+	   var start = new Date().getTime();
+	   var end = start;
+	   while(end < start + ms) {
+	     end = new Date().getTime();
+	  }
+	}
+
+	function fadeRemove() {
+		setTimeout(function()
+	        {
+	            $(".setMe").fadeOut("fast", function ()
+	            {
+	                $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                $(".setMe").attr("src", "https://imgs-steps-dragoart-386112.c.cdn77.org/how-to-draw-a-bus-for-kids-step-5_1_000000084065_5.jpg");
+	            });
+	         }, 500);
+	}
+
+	function fadeShow() {
+		setTimeout(function()
+	        {
+	            $(".setMe").fadeIn("fast", function ()
+	            {
+	                // $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                // $(".setMe").attr("src", "https://imgs-steps-dragoart-386112.c.cdn77.orghow-to-draw-a-bus-for-kids-step-5_1_000000084065_5.jpg");
+	            });
+	         }, 1000);
+	}
+	
+	$(".setMe").click(function() {
+		console.log("!!!");
+		fadeRemove();
+		fadeShow();
+		setTimeout(function()
+	    {
+	            $(".setMe").fadeOut("fast", function ()
+	            {
+	                $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                // $(".setMe").attr("src", "http://www.hdwallpaperspulse.com/wp-content/uploads/2013/10/28/Crazy_Cat_2.jpg");
+	            });
+	         }, 1500);
+	    setTimeout(function()
+	    {
+	            $(".setMe").fadeIn("fast", function ()
+	            {
+	                // $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                // $(".setMe").attr("src", "https://imgs-steps-dragoart-386112.c.cdn77.orghow-to-draw-a-bus-for-kids-step-5_1_000000084065_5.jpg");
+	            });
+	         }, 2000);
+	    setTimeout(function()
+	    {
+	            $(".setMe").fadeOut("fast", function ()
+	            {
+	                $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                $(".setMe").attr("src", "http://www.hdwallpaperspulse.com/wp-content/uploads/2013/10/28/Crazy_Cat_2.jpg");
+	            });
+	         }, 2500);
+	    setTimeout(function()
+	    {
+	            $(".setMe").fadeIn("fast", function ()
+	            {
+	                // $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	            });
+	         }, 3000);
+	    setTimeout(function()
+	    {
+	            $(".setMe").fadeOut("fast", function ()
+	            {
+	                $(".setMe").hide();                
+	                $(".setMe").attr("src", "https://imgs-steps-dragoart-386112.c.cdn77.org/how-to-draw-a-bus-for-kids-step-5_1_000000084065_5.jpg");
+	                // $("div#outer").html($("div#text").text());
+	                // $(".setMe").attr("src", "http://www.hdwallpaperspulse.com/wp-content/uploads/2013/10/28/Crazy_Cat_2.jpg");
+	            });
+	         }, 3500);
+	    setTimeout(function()
+	    {
+	            $(".setMe").fadeIn("fast", function ()
+	            {
+	                // $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                // $(".setMe").attr("src", "https://imgs-steps-dragoart-386112.c.cdn77.orghow-to-draw-a-bus-for-kids-step-5_1_000000084065_5.jpg");
+	            });
+	         }, 4000);
+	    setTimeout(function()
+	    {
+	            $(".setMe").fadeOut("fast", function ()
+	            {
+	                $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                //$(".setMe").attr("src", "http://www.hdwallpaperspulse.com/wp-content/uploads/2013/10/28/Crazy_Cat_2.jpg");
+	            });
+	         }, 4500);
+	    setTimeout(function()
+	    {
+	            $(".setMe").fadeIn("fast", function ()
+	            {
+	                // $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                // $(".setMe").attr("src", "https://imgs-steps-dragoart-386112.c.cdn77.orghow-to-draw-a-bus-for-kids-step-5_1_000000084065_5.jpg");
+	            });
+	         }, 5000);
+	    setTimeout(function()
+	    {
+	            $(".setMe").fadeOut("fast", function ()
+	            {
+	                $(".setMe").hide();                
+	                // $("div#outer").html($("div#text").text());
+	                //$(".setMe").attr("src", "http://www.hdwallpaperspulse.com/wp-content/uploads/2013/10/28/Crazy_Cat_2.jpg");
+	            });
+	         }, 5500);
+
+		
+		// $(this).attr("src", "https://imgs-steps-dragoart-386112.c.cdn77.org/how-to-draw-a-bus-for-kids-step-5_1_000000084065_5.jpg");		
+		// wait(1000);
+		// console.log("!!!2");
+		// wait(1000);
+		// $(this).show();
+	});
+<% end %>

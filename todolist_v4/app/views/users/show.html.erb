@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <strong>Birth year:</strong>
+  <%= @user.birth_year %>
+</p>
+
+<tbody>
+  <tr>
+        <% @user.todolists.each do |t| %>
+          <td><%= t.list_name %></td>
+        <% end %>
+      </tr>
+</tbody>
+
+<%= form_for(@user.todolists.build, remote: true) do |f2| %>
+
+  <% # f.fields_for @user.todolists.build do |f2| %>
+
+      <div class="field">
+        <%= f2.label :list_name %>
+        <%= f2.text_field :list_name %>
+      </div>
+
+      <div class="field">
+        <%= f2.label :list_due_date %>
+        <%= f2.date_select :list_due_date %>
+      </div>
+
+      <div class="field">
+        <%= f2.label :user_id %>
+        <%= f2.text_field :user_id , :default => @user.id %>
+      </div>
+
+      <div class="actions">
+        <%= f2.submit "Submit" %>
+      </div>
+      <% end %>
+  <% # end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

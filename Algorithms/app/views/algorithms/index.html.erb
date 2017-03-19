@@ -1,0 +1,11 @@
+
+
+<div class="algo_inver">
+	<%= form_tag algorithms_getInversions_path, :method => 'get', remote: true,
+		data: {disable_with: "<p> Loading </p>"} do %>
+	  <p>
+	    <%= text_field_tag :lst, params[:lst] %>
+	    <%= submit_tag "Get inversions", data: {disable_with: "Loading"}, :name => nil %>
+	  </p>
+	<% end %>
+</div>

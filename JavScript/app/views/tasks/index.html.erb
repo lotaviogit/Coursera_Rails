@@ -1,0 +1,11 @@
+<h1>Tasks#index</h1>
+
+<div id="show_tasks">
+<% @tasks.each do |t| %>
+	<p>Name: <%= t.name %></p>
+	<p>Num: <%= t.num %></p>
+	<img src="<%=t.img_url%>">
+<% end %>
+</div>
+
+<%= link_to "Hello", tasks_hello_path, id: "hello_link", remote: true %>
